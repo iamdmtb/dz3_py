@@ -12,6 +12,9 @@ key_8 = ('J', 'X', 'Ш', 'Э', 'Ю')
 value_8 = 8
 key_10 = ('Q', 'Z', 'Ф', 'Щ', 'Ъ')
 value_10 = 10
-scrabble = dict.fromkeys(key_1, value_1), dict.fromkeys(key_2, value_2), dict.fromkeys(key_3, value_3), dict.fromkeys(key_4, value_4), dict.fromkeys(key_5, value_5), dict.fromkeys(key_8, value_8), dict.fromkeys(key_10, value_10)
-word = [input('Введите слово: ')]
-print
+scrabble = {**dict.fromkeys(key_1, value_1), **dict.fromkeys(key_2, value_2), **dict.fromkeys(key_3, value_3), **dict.fromkeys(key_4, value_4), **dict.fromkeys(key_5, value_5), **dict.fromkeys(key_8, value_8), **dict.fromkeys(key_10, value_10)}
+word = list(input('Введите слово: '))
+points = 0
+for i in word:   
+    points += scrabble[i]
+print(points)
